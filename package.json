@@ -1,0 +1,32 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "license": "ISC",
+  "author": "OmarDST",
+  "type": "module",
+  "scripts": {
+    "check": "pnpm cspell && pnpm lint && pnpm typecheck",
+    "cspell": "npx cspell .",
+    "dev": "pnpm -r --if-present --parallel dev",
+    "devcontainer:up": "devcontainer up --workspace-folder .",
+    "format": "npx prettier . --write",
+    "lint": "pnpm -r --if-present --parallel lint",
+    "migration:fresh--seed": "pnpm -r --if-present --parallel migration:fresh--seed",
+    "prepare": "node scripts/install.js && node scripts/copy-env.js",
+    "test": "pnpm -r --if-present --parallel test",
+    "typecheck": "pnpm -r --if-present --parallel typecheck"
+  },
+  "devDependencies": {
+    "@devcontainers/cli": "^0.71.0",
+    "@eslint/js": "^9.10.0",
+    "@types/eslint__js": "^8.42.3",
+    "cspell": "^8.14.4",
+    "eslint": "^9.10.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript": "~5.5",
+    "typescript-eslint": "^8.5.0",
+    "vitest": "^2.1.0"
+  }
+}

@@ -1,0 +1,31 @@
+TEMP_FILE=$(mktemp)
+
+# Run your pre-commit commands and capture output
+echo "✨ Running pre-commit hook..."
+
+echo "✨ npm run lint-stage..." >> $TEMP_FILE
+if npx lint-staged --allow-empty >> $TEMP_FILE 2>&1; then
+  echo "✨ Lint-staged completed" >> $TEMP_FILE
+else
+  echo "⛔ Lint-staged failed" >> $TEMP_FILE
+  cat $TEMP_FILE
+  code $TEMP_FILE
+  exit 1
+fi
+
+# List of files you want to restrict
+RESTRICTED_FILES=".husky/pre-commit .husky/pre-push crm-monorepo.code-workspace .vscode/launch.json .vscode/tasks.json .devcontainer/devcontainer.json"
+
+echo "✨ Ensuring restricted files not modified..." >> $TEMP_FILE
+for FILE in $RESTRICTED_FILES; do
+  # Check if the file is staged for commit
+  if git diff --cached --name-only | grep -q "$FILE"; then
+    echo "⛔ Modifications to $FILE are restricted. Please update pre-commit file temporarily if you really need to modify the file" >> $TEMP_FILE
+    cat $TEMP_FILE
+    code $TEMP_FILE
+    exit 1
+  fi
+done
+
+echo "✨ pre-commit hook completed"
+exit 0

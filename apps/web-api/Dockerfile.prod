@@ -1,0 +1,22 @@
+ARG NODE_IMAGE=public.ecr.aws/docker/library/node:22-alpine
+
+FROM $NODE_IMAGE AS base
+WORKDIR /monorepo
+ADD . .
+
+# Build stage
+FROM base AS build
+WORKDIR /monorepo
+RUN npm ci
+RUN npm run build -w @crm/web-api
+RUN npm prune
+
+# Final production stage
+FROM base
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
+WORKDIR /monorepo
+COPY --from=build /monorepo/node_modules /node_modules
+COPY --from=build /monorepo/apps/web-api/build /build
+EXPOSE 8080
+CMD ["node", "../build/bin/server.js"]

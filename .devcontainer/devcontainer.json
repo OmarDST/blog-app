@@ -1,0 +1,47 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspace",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // docker and devcontainer
+        "ms-vscode-remote.remote-containers",
+        "ms-azuretools.vscode-docker",
+
+        // tooling
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "VASubasRaj.flashpost",
+        "streetsidesoftware.code-spell-checker",
+        "usernamehw.errorlens",
+        "jamesinaxx.sort-package",
+        "vitest.explorer",
+
+        // git
+        "seatonjiang.gitmoji-vscode",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+
+        // dx
+        "xabikos.JavaScriptSnippets",
+        "albert.TabOut",
+        "folke.vscode-monorepo-workspace",
+        "sourcegraph.cody-ai",
+
+        // adonis official extension
+        "jripouteau.adonis-vscode-extension",
+        "jripouteau.japa-vscode",
+        "adonisjs.vscode-edge"
+      ]
+    }
+  },
+
+  "remoteUser": "root"
+}

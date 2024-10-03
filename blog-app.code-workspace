@@ -1,0 +1,63 @@
+{
+  "folders": [
+    {
+      "name": "✨ blog-app",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit",
+      "source.fixAll.ts": "explicit",
+    },
+    "sortPackage.onSave": true,
+    "cSpell.diagnosticLevel": "Error",
+    "cSpell.caseSensitive": false,
+    "cSpell.checkOnlyEnabledFileTypes": false,
+    "japa.tests.filePattern": "**/*.spec.ts",
+    "japa.tests.npmScript": "test:japa",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+      ".env": ".env*",
+      "*code-snippets": "crm.*.code-snippets",
+    },
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+  },
+  "extensions": {
+    "recommendations": [
+      // docker and devcontainer
+      "ms-vscode-remote.remote-containers",
+      "ms-azuretools.vscode-docker",
+
+      // tooling
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "VASubasRaj.flashpost",
+      "streetsidesoftware.code-spell-checker",
+      "usernamehw.errorlens",
+      "jamesinaxx.sort-package",
+      "vitest.explorer",
+
+      // git
+      "seatonjiang.gitmoji-vscode",
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "donjayamanne.githistory",
+
+      // dx
+      "xabikos.JavaScriptSnippets",
+      "albert.TabOut",
+      "folke.vscode-monorepo-workspace",
+
+      // adonis official extension
+      "jripouteau.adonis-vscode-extension",
+      "jripouteau.japa-vscode",
+      "adonisjs.vscode-edge",
+    ],
+  },
+}
