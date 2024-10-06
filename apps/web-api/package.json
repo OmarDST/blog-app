@@ -38,9 +38,6 @@
     "typecheck": "tsc --noEmit"
   },
   "prettier": "@adonisjs/prettier-config",
-  "resolutions": {
-    "strtok3": "8.0.1"
-  },
   "dependencies": {
     "@adonisjs/auth": "^9.2.3",
     "@adonisjs/core": "^6.12.1",
@@ -84,13 +81,5 @@
       "./app/controllers/**/*.ts",
       "./app/middleware/*.ts"
     ]
-  },
-  "overrides": {
-    "strtok3": "8.0.1"
-  },
-  "pnpm": {
-    "overrides": {
-      "strtok3": "8.0.1"
-    }
   }
 }

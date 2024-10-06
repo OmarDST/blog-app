@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  strtok3: 8.0.1
+
 importers:
 
   .:
@@ -3779,8 +3782,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  strtok3@8.1.0:
-    resolution: {integrity: sha512-ExzDvHYPj6F6QkSNe/JxSlBxTh3OrI6wrAIz53ulxo1c4hBJ1bT9C/JrAthEKHWG9riVH3Xzg7B03Oxty6S2Lw==}
+  strtok3@8.0.1:
+    resolution: {integrity: sha512-HNkTAnNWQj2YBzfTtoC5OQyu1QwPsMwiB7VyQmNvQKCrmEDSvFB857Vh97UY9InGLNRAB91sdS1ztifRo/3hdA==}
     engines: {node: '>=16'}
 
   superagent@8.1.2:
@@ -6570,7 +6573,7 @@ snapshots:
   file-type@19.5.0:
     dependencies:
       get-stream: 9.0.1
-      strtok3: 8.1.0
+      strtok3: 8.0.1
       token-types: 6.0.0
       uint8array-extras: 1.4.0
 
@@ -8074,7 +8077,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  strtok3@8.1.0:
+  strtok3@8.0.1:
     dependencies:
       '@tokenizer/token': 0.3.0
       peek-readable: 5.2.0
